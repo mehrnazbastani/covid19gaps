@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Covid-19 Deaths and Data" },
+      { name: "description", content: "Data Stories Unfolded creates interactive web-based data narratives with compelling visualizations, including maps." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Covid-19 Deaths and Data" },
+      { property: "og:description", content: "Data Stories Unfolded creates interactive web-based data narratives with compelling visualizations, including maps." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Covid-19 Deaths and Data" },
+      { name: "twitter:description", content: "Data Stories Unfolded creates interactive web-based data narratives with compelling visualizations, including maps." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/daa9df81-d8fc-4b58-8a12-eb424f514cc9/id-preview-666493a2--c9f4c83d-81e0-4b8c-b654-5d28de24c833.lovable.app-1780275252608.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/daa9df81-d8fc-4b58-8a12-eb424f514cc9/id-preview-666493a2--c9f4c83d-81e0-4b8c-b654-5d28de24c833.lovable.app-1780275252608.png" },
     ],
     links: [
       {
