@@ -33,14 +33,11 @@ jobs:
       - name: Build
         run: bun run build
 
-      - name: Build
-        run: bun run build
-
-      - name: Show build output folders
+      - name: Find index files
         run: |
-          echo "Root files:"
-          ls
-          echo "Possible build folders:"
+          echo "Looking for index.html files"
+          find . -name "index.html" -type f
+          echo "Root folders"
           find . -maxdepth 3 -type d | sort
 
       - name: Upload artifact
