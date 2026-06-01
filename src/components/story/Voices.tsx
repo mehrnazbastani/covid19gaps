@@ -1,55 +1,32 @@
-import { motion } from "framer-motion";
 import { Reveal, SectionLabel, PullQuote } from "@/components/story/ui";
-import nurse from "@/assets/voice-nurse.jpg";
-import grandfather from "@/assets/voice-grandfather.jpg";
-import teacher from "@/assets/voice-teacher.jpg";
-import mother from "@/assets/voice-mother.jpg";
 
-type Voice = {
-  img: string;
-  alt: string;
-  name: string;
-  role: string;
+type Research = {
   tag: string;
   quote: string;
 };
 
-const VOICES: Voice[] = [
+// Verbatim free-text responses from vaccinated adults recently diagnosed with
+// COVID-19, as published in the peer-reviewed study (BMC Public Health, 2022).
+const RESEARCH: Research[] = [
   {
-    img: nurse,
-    alt: "Portrait of Maria, a respiratory therapist in teal scrubs in a hospital corridor",
-    name: "Maria, 36",
-    role: "Respiratory therapist · Missouri",
-    tag: "Supporting healthcare",
+    tag: "The greater good",
     quote:
-      "I watched too many people my own age fight to breathe. I got vaccinated so I could keep showing up for them — and so my unit wouldn't break under one more wave.",
+      "I wanted it, to protect my family and to show them it is okay to get vaccinated.",
   },
   {
-    img: grandfather,
-    alt: "Portrait of Samuel, a grandfather sitting by a window holding his glasses",
-    name: "Samuel, 71",
-    role: "Grandfather of six · Georgia",
-    tag: "Protecting loved ones",
+    tag: "Protecting the vulnerable",
     quote:
-      "My grandkids are my whole world. The day I could finally hug them again — that was my why. I wasn't going to miss another birthday on a screen.",
+      "We should protect those that can't protect themselves. I chose the vaccine so I didn't infect 10-year-old, baby granddaughters and other children / high-risk people. I'm also high risk.",
   },
   {
-    img: teacher,
-    alt: "Portrait of Lin, a teacher standing in her classroom",
-    name: "Lin, 29",
-    role: "5th-grade teacher · Washington",
-    tag: "Resuming normal life",
-    quote:
-      "My students learn best in a room together. I got the shot so I could open my classroom door again — and keep it open for the whole year.",
-  },
-  {
-    img: mother,
-    alt: "Portrait of Priya, an expectant mother by a window holding her belly",
-    name: "Priya, 32",
-    role: "Expectant mother · Texas",
     tag: "Trust in science",
     quote:
-      "I read the studies until I understood them. Getting vaccinated was the first thing I ever did to protect my daughter — before she was even born.",
+      "While I am a Christian, I believe the science and research that has gone into the development and testing of the vaccines. They are safe and effective.",
+  },
+  {
+    tag: "Risk perception",
+    quote:
+      "COVID-19 is clearly a disease that will be reduced only through herd immunity supported by vaccination. While there is a risk in the vaccine, for most people this is less than the disease itself.",
   },
 ];
 
@@ -59,57 +36,110 @@ export function Voices() {
       <Reveal>
         <SectionLabel index="07">Voices</SectionLabel>
         <h2 className="font-display text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
-          Behind every line, a why
+          Behind every line, a person
         </h2>
         <p className="story-prose mt-5">
-          The most effective translation of the data was never a chart. It was a person. During the
-          pandemic, ordinary people did what dashboards could not: they put a face on the numbers and
-          a reason behind the choice. These are the kinds of stories that moved neighbors when
-          statistics could not.
+          The most effective translation of the data was never a chart — it was a person. To keep
+          this section honest, the words below are not invented. They come from a documented patient
+          testimonial and from peer-reviewed research that recorded, verbatim, why people chose to be
+          vaccinated.
         </p>
       </Reveal>
 
-      <div className="my-12 grid gap-6 sm:grid-cols-2">
-        {VOICES.map((v, i) => (
-          <Reveal key={v.name} delay={i * 0.08}>
-            <motion.figure
-              whileHover={{ y: -4 }}
-              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="group overflow-hidden rounded-xl border border-border bg-card/50"
-            >
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <img
-                  src={v.img}
-                  alt={v.alt}
-                  loading="lazy"
-                  width={1024}
-                  height={1280}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
-                <span className="absolute left-4 top-4 rounded-full border border-gold/40 bg-background/70 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-gold backdrop-blur-sm">
-                  {v.tag}
-                </span>
-              </div>
-              <figcaption className="p-5">
-                <blockquote className="font-display text-lg italic leading-snug text-foreground">
-                  &ldquo;{v.quote}&rdquo;
-                </blockquote>
-                <div className="mt-4 border-t border-border pt-3">
-                  <div className="font-semibold text-foreground">{v.name}</div>
-                  <div className="text-sm text-muted-foreground">{v.role}</div>
-                </div>
-              </figcaption>
-            </motion.figure>
+      {/* Featured real testimonial — Kristin */}
+      <Reveal>
+        <figure className="my-12 overflow-hidden rounded-xl border border-border bg-card/50">
+          <div className="border-b border-border bg-surface/40 px-6 py-4">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+              <span className="font-display text-lg font-semibold text-foreground">Kristin</span>
+              <span className="text-sm text-muted-foreground">
+                Nurse practitioner, age 31 · Gainesville, Florida
+              </span>
+              <span className="rounded-full border border-unvax/40 bg-background/70 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-unvax">
+                Diagnosed before vaccines were available
+              </span>
+            </div>
+          </div>
+          <div className="p-6">
+            <p className="story-prose">
+              In December 2020, Kristin was a healthy 31-year-old nurse practitioner running her own
+              rural clinic. She wasn't worried for herself — she was waiting her turn so older,
+              more vulnerable patients could be vaccinated first. She was diagnosed with COVID-19 on{" "}
+              <strong>December 21, 2020</strong>. The first vaccines in her area were given on{" "}
+              <strong>December 23</strong> — two days too late.
+            </p>
+            <p className="story-prose mt-4">
+              She spent <strong>111 days in the hospital</strong>: more than 100 days in intensive
+              care on a ventilator, 68 days on ECMO, on dialysis, with nearly every organ system
+              failing. Today she lives with a pacemaker, chronic shortness of breath, and PTSD — and
+              she has since been vaccinated and vaccinated her young son.
+            </p>
+            <blockquote className="mt-6 border-l-2 border-gold pl-6">
+              <p className="font-display text-xl italic leading-snug text-foreground sm:text-2xl">
+                &ldquo;Before my illness, I did not realize that young people can be severely impacted
+                by COVID. I want everyone to know that they do not ever want to go through what I did.
+                Getting vaccinated can help prevent severe illness.&rdquo;
+              </p>
+            </blockquote>
+            <figcaption className="mt-5 text-sm text-muted-foreground">
+              Source:{" "}
+              <a
+                className="text-vax underline underline-offset-4 hover:text-gold"
+                href="https://vaccinateyourfamily.org/testimonials/kristin/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Kristin&rsquo;s testimonial — Vaccinate Your Family
+              </a>
+            </figcaption>
+          </div>
+        </figure>
+      </Reveal>
+
+      <PullQuote cite="Why people said they got vaccinated — in their own words">
+        Tell people a statistic and they nod. Let them read why a neighbor rolled up their sleeve,
+        and they picture their own family.
+      </PullQuote>
+
+      {/* Verbatim research quotes */}
+      <Reveal>
+        <p className="story-prose mb-6">
+          When researchers asked adults recently diagnosed with COVID-19 to explain, in their own
+          words, why they chose vaccination, a few themes recurred again and again — protecting
+          family, looking after the vulnerable, and trusting the science.
+        </p>
+      </Reveal>
+      <div className="my-4 grid gap-6 sm:grid-cols-2">
+        {RESEARCH.map((r, i) => (
+          <Reveal key={r.tag} delay={i * 0.08}>
+            <figure className="h-full rounded-xl border border-border bg-card/50 p-6">
+              <span className="rounded-full border border-gold/40 bg-background/60 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-gold">
+                {r.tag}
+              </span>
+              <blockquote className="mt-4 font-display text-lg italic leading-snug text-foreground">
+                &ldquo;{r.quote}&rdquo;
+              </blockquote>
+            </figure>
           </Reveal>
         ))}
       </div>
+      <Reveal>
+        <p className="mt-4 text-sm text-muted-foreground">
+          Verbatim survey responses from vaccinated adults. Source: Bennett MM, et al.,{" "}
+          <a
+            className="text-vax underline underline-offset-4 hover:text-gold"
+            href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9579584/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            &ldquo;Attitudes and personal beliefs about the COVID-19 vaccine among people with
+            COVID-19&rdquo;
+          </a>
+          , <em>BMC Public Health</em> (2022).
+        </p>
+      </Reveal>
 
-      <PullQuote cite="The #MyWhy campaign">
-        Tell people a statistic and they nod. Tell them why you rolled up your sleeve, and they
-        picture their own.
-      </PullQuote>
-
+      {/* #MyWhy campaign panel */}
       <Reveal>
         <div className="mt-10 rounded-xl border border-border bg-surface/40 p-6">
           <div className="flex items-center gap-3">
