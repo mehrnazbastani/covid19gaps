@@ -139,49 +139,15 @@ export function Voices() {
         </p>
       </Reveal>
 
-      {/* #MyWhy campaign panel */}
       <Reveal>
-        <div className="mt-10 rounded-xl border border-border bg-surface/40 p-6">
-          <div className="flex items-center gap-3">
-            <span className="font-display text-xl font-semibold text-gold">#MyWhy</span>
-            <span className="h-px flex-1 bg-border" />
-          </div>
-          <p className="story-prose mt-4 !text-[1.1rem]">
-            The <strong>#MyWhy</strong> campaign was a public-health and social-media initiative led
-            by organizations like the <strong>American Hospital Association</strong> and the{" "}
-            <strong>CDC</strong> to encourage COVID-19 vaccination. It empowered individuals —
-            especially healthcare workers — to share personal stories explaining their &ldquo;why&rdquo;
-            for getting vaccinated, building vaccine confidence in their communities through trusted,
-            familiar voices rather than top-down statistics.
-          </p>
-          <div className="mt-5 grid gap-3 sm:grid-cols-2">
-            {[
-              ["Protecting vulnerable loved ones", "Safeguarding elderly grandparents, immunocompromised friends, and newborn babies."],
-              ["Resuming normal life", "Hugging family, returning to in-person school, traveling, and reconnecting safely."],
-              ["Supporting healthcare", "Easing the strain on hospitals and preventing severe illness."],
-              ["Trust in science", "Believing in the efficacy and safety of the research behind the vaccines."],
-            ].map(([title, body]) => (
-              <div key={title} className="rounded-lg border border-border/60 bg-card/40 p-4">
-                <div className="font-semibold text-foreground">{title}</div>
-                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{body}</p>
-              </div>
-            ))}
-          </div>
-          <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-            To see more stories or learn how to participate, visit the{" "}
-            <a
-              className="text-vax underline underline-offset-4 hover:text-gold"
-              href="https://www.aha.org/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              American Hospital Association
-            </a>{" "}
-            or search the{" "}
-            <strong className="text-foreground">#MyWhy</strong> hashtag on platforms like Instagram
-            and YouTube.
-          </p>
-        </div>
+        <p className="story-prose mt-10">
+          Campaigns like <strong>#MyWhy</strong> — led by the American Hospital Association and the CDC —
+          tried to bridge that gap by letting healthcare workers and everyday people explain, in their
+          own words, why they chose vaccination: to protect a parent, to hold a grandchild, to keep a
+          clinic open. The research above shows those same motives recurring across thousands of
+          respondents. The honest translation of a rate is not a prettier chart — it is someone
+          you know saying why it mattered to them.
+        </p>
       </Reveal>
     </section>
   );
