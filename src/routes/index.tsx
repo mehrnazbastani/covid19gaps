@@ -7,6 +7,7 @@ import { RateOverTime, IRROverTime, AgeBars, IRRByAge } from "@/components/story
 import { UsMap } from "@/components/story/UsMap";
 import { ChartFrame, LegendDot, CHART } from "@/components/story/chart-kit";
 import { Reveal, SectionLabel, Stat, PullQuote, TimelineEvent } from "@/components/story/ui";
+import { Voices } from "@/components/story/Voices";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -37,6 +38,7 @@ const SECTIONS = [
   { id: "deaths", label: "Death Rates" },
   { id: "irr", label: "Relative Risk" },
   { id: "communicate", label: "Communication" },
+  { id: "voices", label: "Voices" },
   { id: "conclusion", label: "What Now" },
 ];
 
@@ -83,6 +85,7 @@ function Story() {
         <Deaths />
         <IRRSection />
         <Communication />
+        <Voices />
         <Conclusion />
       </main>
 
@@ -541,7 +544,7 @@ function Conclusion() {
   return (
     <section id="conclusion" className="scroll-mt-20 pt-24">
       <Reveal>
-        <SectionLabel index="07">What Now</SectionLabel>
+        <SectionLabel index="08">What Now</SectionLabel>
         <h2 className="font-display text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
           Before the next one
         </h2>
